@@ -15,6 +15,8 @@ function NavBar() {
       >
         Blog
       </NavLink>
+
+      <NavLink to="/login">Login</NavLink>
     </nav>
   );
 }

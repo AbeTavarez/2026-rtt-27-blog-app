@@ -5,6 +5,7 @@ import BlogsPage from './pages/BlogsPage';
 import NotFoundPage from './pages/NotFound';
 import NavBar from './components/NavBar';
 import BlogPage from './pages/BlogPage';
+import LoginPage from './pages/LoginPage';
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
         <Route path='/blogs' element={<BlogsPage />}/>
 
         <Route path='/blogs/:slug' element={<BlogPage />}/>
+
+        <Route path='/login' element={<LoginPage />}/>
 
         <Route path='*' element={<NotFoundPage />}/>
       </Routes>
