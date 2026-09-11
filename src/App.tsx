@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import BlogsPage from './pages/BlogsPage';
 import NotFoundPage from './pages/NotFound';
 import NavBar from './components/NavBar';
+import BlogPage from './pages/BlogPage';
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
         <Route path='/' element={<HomePage />}/>
         
         <Route path='/blogs' element={<BlogsPage />}/>
+
+        <Route path='/blogs/:slug' element={<BlogPage />}/>
 
         <Route path='*' element={<NotFoundPage />}/>
       </Routes>
