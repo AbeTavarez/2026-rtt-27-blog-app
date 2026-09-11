@@ -1,6 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 function NavBar() {
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+    logout();
+    navigate("/");
+  };
   return (
     <nav>
       <NavLink
@@ -16,7 +24,11 @@ function NavBar() {
         Blog
       </NavLink>
 
-      <NavLink to="/login">Login</NavLink>
+      {isAuthenticated ? (
+        <button onClick={onLogout}>Sign out</button>
+      ) : (
+        <NavLink to="/login">Login</NavLink>
+      )}
     </nav>
   );
 }

@@ -1,12 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 function LoginPage() {
   const navigate = useNavigate();
   
-  const handleClick = () => {
-    navigate('/blogs');
-  };
+  const { login } = useAuth();
   
+  const handleClick = () => {
+    login();
+    navigate("/blogs");
+  };
+
   return (
     <div>
       <h2>Login page</h2>
